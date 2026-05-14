@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./backend/app
+    environment:
+      TWITCH_CLIENT_ID: ${TWITCH_CLIENT_ID}
+      TWITCH_CLIENT_SECRET: ${TWITCH_CLIENT_SECRET}
+      TWITCH_REDIRECT_URI: http://localhost/auth/twitch/callback
+      YOUTUBE_CLIENT_ID: ${YOUTUBE_CLIENT_ID:-}
+      YOUTUBE_CLIENT_SECRET: ${YOUTUBE_CLIENT_SECRET:-}
+      YOUTUBE_REDIRECT_URI: http://localhost/auth/youtube/callback
+      ACHIEVEMENTS_CONFIG_PATH: file:/config/achievements.yml
+      ACHIEVEMENTS_IMAGES_PATH: file:/config/images
+      FRONTEND_URL: http://localhost
+    volumes:
+      - ./config/achievements.yml:/config/achievements.yml:ro
+      - ./config/images:/config/images:ro
+    expose:
+      - "8080"
+
+  frontend:
+    build: ./frontend/app
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

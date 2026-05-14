@@ -1,0 +1,65 @@
+achievements:
+  - id: twitch_subscribe
+    name: "Свой среди своих"
+    description: "Подпишись на канал на Twitch"
+    imageFile: "twitch_subscribe.svg"
+    platform: TWITCH
+    rule: SUBSCRIPTION
+    channelName: "your_channel_name"
+
+  - id: twitch_streak_3
+    name: "3 дня подряд"
+    description: "Смотри стрим 3 дня подряд"
+    imageFile: "twitch_streak_3.svg"
+    platform: TWITCH
+    rule: VIEW_STREAK
+    threshold: 3
+
+  - id: twitch_streak_7
+    name: "Недельный марафон"
+    description: "Смотри стрим 7 дней подряд"
+    imageFile: "twitch_streak_7.svg"
+    platform: TWITCH
+    rule: VIEW_STREAK
+    threshold: 7
+
+  - id: twitch_streak_10
+    name: "Закалённый зритель"
+    description: "Смотри стрим 10 дней подряд"
+    imageFile: "twitch_streak_10.svg"
+    platform: TWITCH
+    rule: VIEW_STREAK
+    threshold: 10
+
+  - id: twitch_first_message
+    name: "Первое слово"
+    description: "Напиши своё первое сообщение в чате"
+    imageFile: "twitch_first_message.svg"
+    platform: TWITCH
+    rule: FIRST_MESSAGE
+    channelName: "your_channel_name"
+
+  - id: twitch_messages_10
+    name: "Болтун"
+    description: "Напиши 10 сообщений в чате"
+    imageFile: "twitch_messages_10.svg"
+    platform: TWITCH
+    rule: MESSAGE_COUNT
+    channelName: "your_channel_name"
+    threshold: 10
+
+  - id: youtube_playlist_one
+    name: "Первый шаг"
+    description: "Посмотри хотя бы одно видео из плейлиста"
+    imageFile: "youtube_playlist_one.svg"
+    platform: YOUTUBE
+    rule: PLAYLIST_ONE_VIDEO
+    playlistId: "PLxxxxxxxxxxxxxxxxxx"
+
+  - id: youtube_playlist_all
+    name: "Марафонец"
+    description: "Посмотри все видео из плейлиста"
+    imageFile: "youtube_playlist_all.svg"
+    platform: YOUTUBE
+    rule: PLAYLIST_ALL_VIDEOS
+    playlistId: "PLxxxxxxxxxxxxxxxxxx"
